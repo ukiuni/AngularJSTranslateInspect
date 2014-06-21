@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<meta charset="UTF-8">
+<title translate="appName"></title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.13/angular.min.js"></script>
+<script type="text/javascript" src="scripts/angular-translate.min.js"></script>
+<script type="text/javascript" src="scripts/loader-static-files.js"></script>
+<script type="text/javascript">
+	var myApp = angular.module('myApp', [ 'pascalprecht.translate' ]);
+	myApp.config([ '$translateProvider', function($translateProvider) {
+		$translateProvider.useStaticFilesLoader({
+			prefix : 'scripts/translate/lang_',
+			suffix : '.json'
+		});
+		$translateProvider.preferredLanguage(findLanguage());
+	} ]);
+	function findLanguage() {
+		try {
+			return (navigator.browserLanguage || navigator.language || navigator.userLanguage).substr(0, 2)
+		} catch (e) {
+			return "en";
+		}
+	}
+</script>
+</head>
+<body>
+	<h1 translate="index.read"></h1>
+	<h2 translate="index.description"></h2>
+</body>
+</html>

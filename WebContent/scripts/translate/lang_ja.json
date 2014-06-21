@@ -1,0 +1,7 @@
+{
+	"appName":"AngularJSの国際化対応確認",
+	"index":{
+		"read":"簡単国際化！",
+		"description":"AngularJSでも、簡単に国際化対応ができます。"
+	}
+}
